@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   # Session認証
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
+  # API Key
+  get "external_protected", to: "external_protected#index"
 end
