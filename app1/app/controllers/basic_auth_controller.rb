@@ -2,7 +2,6 @@
 class BasicAuthController < ApplicationController
   # MEMO:
   # 検証の為、user_name, passwordは固定値とする
-  # 本来はリクエスト側から取得する
   USERNAME = "username"
   PASSWORD = "password"
 
