@@ -6,6 +6,7 @@ class SessionController < ApplicationController
     password = params[:password]
 
     if USERS[username] && USERS[username] == password
+      # 検証の為、Redis等には保存せず、Cookie内にセッションIDを載せる
       session[:user_id] = username
       render json: { message: "ログインしました", user: username }
     else
