@@ -15,3 +15,16 @@ app2のAPI_KEYの値を変えるとリクエストに失敗する
 ```terminaloutput
 curl -s http://localhost:3001/call_main_system
 ```
+
+### JWT
+app1にログインしてJWTを取得する
+```terminaloutput
+ curl -s -X POST http://localhost:3000/jwt_login -d "username=username" -d "password=password"
+ # => {"jwt":"xxxxx.yyyyy.zzzzz","expires_in":300}   
+```
+
+取得したJWTを付与してapp2へリクエスト
+```terminaloutput
+curl -i http://localhost:3001/jwt_protected \
+  -H "Authorization: Bearer <さっき取得したjwtの値>"
+```

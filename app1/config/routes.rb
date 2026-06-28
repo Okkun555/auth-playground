@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   # API Key
   get "external_protected", to: "external_protected#index"
+  # JWT
+  post "jwt_login", to: "jwt_auth#create"
 end
